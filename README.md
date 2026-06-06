@@ -1,20 +1,48 @@
-Hi Everyone!
+# Weather Forecast
 
-Today we're going to create a new web application with JavaScript (Vanilla JavaScript: No Framework).
+A lightweight weather application built with HTML, CSS, and vanilla JavaScript. It uses the browser's geolocation API to display current weather conditions for the user's location.
 
-In this tutorial, a JavaScript Beginner can create a functional Weather App with ease. and won't face any problems doing that.
+## Features
 
-You must know the basics in JavaScript and HTML, like JavaScript Objects, functions, If statements, ... etc
+- Current temperature and weather conditions
+- Location-based forecast using browser geolocation
+- Celsius and Fahrenheit temperature toggle
+- Weather icons for daytime and nighttime conditions
+- Responsive, dependency-free interface
 
-The only difficulty you might face, is how to work with an API using JavaScript? but trust me that won't be of a big problem.
+## Run Locally
 
-Let's talk about the application you're going to build; our weather app will show the weather information that it will get from the API like this, an Icon that shows the weather status, the temperature value (18°C) in Celsius unit, the weather description (clear sky), and then the user's city and country (London, GB).
+Geolocation works on `localhost` or over HTTPS. Start a local web server from the project directory:
 
-When the user clicks on the temperature value, that will convert it from Celsius to Fahrenheit.
+```bash
+python3 -m http.server 8000
+```
 
-The icons we're going to use for our web application are created by the Graphic Designer Ashley Jager.
-Link to her Repo: https://github.com/manifestinteractive/weather-underground-icons
+Then open [http://localhost:8000](http://localhost:8000) and allow location access when prompted.
 
-The API provider is http://www.OpenWeatherMap.org
+## Configuration
 
+The app retrieves weather data from [OpenWeatherMap](https://openweathermap.org/). Set a valid API key in `app.js` before running the project:
 
+```js
+const key = "YOUR_OPENWEATHERMAP_API_KEY";
+```
+
+For a production deployment, route API requests through a backend or serverless function instead of exposing the key in client-side code.
+
+## Project Structure
+
+```text
+.
+├── app.js        # Geolocation, weather requests, and UI updates
+├── index.html    # Application markup
+├── style.css     # Layout and visual styles
+├── font/         # Local font files
+└── icons/        # Weather condition icons
+```
+
+## Credits
+
+Weather data is provided by [OpenWeatherMap](https://openweathermap.org/).
+
+Weather icons are based on the [Weather Underground Icons](https://github.com/manifestinteractive/weather-underground-icons) collection by Ashley Jager.
